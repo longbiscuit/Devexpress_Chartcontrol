@@ -1,0 +1,9 @@
+F:\GitStudy\vs2013git\DXApplication1win\DXApplication1win\obj\Debug\DXApplication1win.csprojResolveAssemblyReference.cache
+F:\GitStudy\vs2013git\DXApplication1win\DXApplication1win\obj\Debug\DXApplication1win.Form1.resources
+F:\GitStudy\vs2013git\DXApplication1win\DXApplication1win\obj\Debug\DXApplication1win.Properties.Resources.resources
+F:\GitStudy\vs2013git\DXApplication1win\DXApplication1win\obj\Debug\DXApplication1win.csproj.GenerateResource.Cache
+F:\GitStudy\vs2013git\DXApplication1win\DXApplication1win\obj\Debug\DXApplication1win.exe.licenses
+F:\GitStudy\vs2013git\DXApplication1win\DXApplication1win\bin\Debug\DXApplication1win.exe
+F:\GitStudy\vs2013git\DXApplication1win\DXApplication1win\bin\Debug\DXApplication1win.pdb
+F:\GitStudy\vs2013git\DXApplication1win\DXApplication1win\obj\Debug\DXApplication1win.exe
+F:\GitStudy\vs2013git\DXApplication1win\DXApplication1win\obj\Debug\DXApplication1win.pdb
