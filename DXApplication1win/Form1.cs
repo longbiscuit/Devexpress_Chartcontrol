@@ -141,15 +141,20 @@ namespace DXApplication1win
         public void ShowSeries(ChartControl lineChartControl, Series seriesName, string seriesText, List<double> xAxes,
     List<double> yAxes, int iMarkerKind)
         {
-
+            //添加颜色系列
+            List<KnownColor> seriesColor = new List<KnownColor>();
+            seriesColor.AddRange(new List<KnownColor>{KnownColor.Black, KnownColor.Red,KnownColor.Green,KnownColor.Blue,KnownColor.Cyan,KnownColor.Magenta,
+                KnownColor.Yellow,KnownColor.DarkOrange,KnownColor.Navy,KnownColor.Purple,KnownColor.Olive,KnownColor.DarkCyan,KnownColor.RoyalBlue,
+            KnownColor.Violet,KnownColor.Pink,KnownColor.Gray,KnownColor.LightYellow,KnownColor.LightCyan,KnownColor.LightPink });
+            
             seriesName = new Series(seriesText, ViewType.ScatterLine);//新建立一个系列
             seriesName.ArgumentScaleType = ScaleType.Numerical;//x轴数据类型，为数字
             ((LineSeriesView)seriesName.View).LineMarkerOptions.Kind = (MarkerKind)((iMarkerKind % 9));//mark类型  MarkerKind.Triangle
             ((LineSeriesView)seriesName.View).MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
             ((LineSeriesView)seriesName.View).LineStyle.DashStyle = DashStyle.Dash;
-            seriesName.View.Color = Color.FromKnownColor((KnownColor)((iMarkerKind + 1) * 35 % 174));
-
-            //((LineSeriesView)seriesName.View).LineStyle.DashStyle = DashStyle.Dash;//线型
+             // seriesName.View.Color = Color.FromKnownColor((KnownColor)((iMarkerKind + 1) * 35 % 174));
+            seriesName.View.Color = Color.FromKnownColor(seriesColor[iMarkerKind % seriesColor.Count]);
+           
             for (int pointIndex = 0; pointIndex < xAxes.Count; pointIndex++)
             {
                 seriesName.Points.Add(new SeriesPoint(xAxes[pointIndex], yAxes[pointIndex]));
@@ -160,6 +165,7 @@ namespace DXApplication1win
             lineChartControl.Dock = DockStyle.Fill;//ChartControl控件在父控件内填满平铺
         }
 
+        //理论值
         public void ShowSeries_yuce(ChartControl lineChartControl, Series seriesName, string seriesText, List<double> xAxes,
     List<double> yAxes, int iMarkerKind)
         {
@@ -190,7 +196,7 @@ namespace DXApplication1win
 
 
 
-        //button
+        //button  Github_Devexpress_Chartcontrol
     }
 }
 
