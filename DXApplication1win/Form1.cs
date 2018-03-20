@@ -141,6 +141,8 @@ namespace DXApplication1win
         public void ShowSeries(ChartControl lineChartControl, Series seriesName, string seriesText, List<double> xAxes,
     List<double> yAxes, int iMarkerKind)
         {
+            //功能添加：要添加图标题
+            //功能添加：要添加轴标题
             //添加颜色系列
             List<KnownColor> seriesColor = new List<KnownColor>();
             seriesColor.AddRange(new List<KnownColor>{KnownColor.Black, KnownColor.Red,KnownColor.Green,KnownColor.Blue,KnownColor.Cyan,KnownColor.Magenta,
