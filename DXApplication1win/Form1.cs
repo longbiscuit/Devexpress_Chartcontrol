@@ -24,6 +24,10 @@ namespace DXApplication1win
             this.xtraTabControl1.TabPages.Add("三角函数图");//添加一个page，在此之前可以直接用ui界面的本控件的remove属性删除默认的两个page
             ChartControl lineChartControl = new ChartControl();//实例化一个ChartControl
             lineChartControl.Legend.UseCheckBoxes = true;//图例可以勾选
+            ChartTitle chartTitle = new ChartTitle();//建立一个标题变量
+            chartTitle.Text = "三角函数图";//给标题命名
+            lineChartControl.Titles.Add(chartTitle);//将标题内容添加到图控件上
+
 
             //产生数据
             List<double> xaxesList = new List<double>();//x轴数据
@@ -116,6 +120,10 @@ namespace DXApplication1win
                 ShowSeries(lineChartControl, seriesNameList2[seriesIndex], seriesTextList2[seriesIndex], xaxesList2, YList2[seriesIndex], seriesIndex);
 
             }
+            ((XYDiagram)lineChartControl.Diagram).AxisX.Title.Text = "p/kPa";//x轴标题
+            ((XYDiagram)lineChartControl.Diagram).AxisY.Title.Text = "q/kPa";//y轴标题
+            ((XYDiagram)lineChartControl.Diagram).AxisX.Title.Visible = true;//将x轴标题显示出来
+            ((XYDiagram)lineChartControl.Diagram).AxisY.Title.Visible = true;//将y轴标题显示出来
             //显示
             int tabPagesCount = this.xtraTabControl1.TabPages.Count - 1;//xtraTabControl2page的个数，为了删除默认的，可以用ui界面的remove
             this.xtraTabControl1.TabPages[tabPagesCount].Controls.Add(lineChartControl);//将ChartControl这个控件添加到这个page中
@@ -165,7 +173,16 @@ namespace DXApplication1win
             lineChartControl.Legend.Visible = true;//图例可见
             ((XYDiagram)lineChartControl.Diagram).Rotated = false;//ChartControl控件不旋转
             lineChartControl.Dock = DockStyle.Fill;//ChartControl控件在父控件内填满平铺
-        }
+
+
+                //((XYDiagram)lineChartControl.Diagram).AxisX.Title.Text = "p/kPa";//x轴标题
+                //((XYDiagram)lineChartControl.Diagram).AxisY.Title.Text = "q/kPa";//y轴标题
+                //((XYDiagram)lineChartControl.Diagram).AxisX.Title.Visible = true;//将x轴标题显示出来
+                //((XYDiagram)lineChartControl.Diagram).AxisY.Title.Visible = true;//将y轴标题显示出来
+                //MessageBox.Show("我执行了一次");
+            
+
+        }//https://www.cnblogs.com/Mr-Li-2016/p/6115089.html
 
         //理论值
         public void ShowSeries_yuce(ChartControl lineChartControl, Series seriesName, string seriesText, List<double> xAxes,
